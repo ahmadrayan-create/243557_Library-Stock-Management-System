@@ -1,35 +1,17 @@
--- 1. Create the Database (Run this command first)
+
 CREATE DATABASE LibraryStockDB;
-GO
-
--- 2. Use the newly created database
 USE LibraryStockDB;
-GO
 
--- 3. Create the Users Table for Authentication [cite: 154]
--- Password should ideally be hashed in a real-world app.
-CREATE TABLE Users (
-    UserID INT PRIMARY KEY IDENTITY(1,1),
-    Username NVARCHAR(50) NOT NULL UNIQUE,
-    Password NVARCHAR(50) NOT NULL,
-    Role NVARCHAR(50) NOT NULL -- e.g., 'Librarian', 'Admin'
-);
+CREATE TABLE Users 
+    (
+    UserID INT PRIMARY KEY IDENTITY(1,1), Username NVARCHAR(50) NOT NULL UNIQUE,  Password NVARCHAR(50) NOT NULL, Role NVARCHAR(50) NOT NULL );
 
--- 4. Create the Books Table 
 CREATE TABLE Books (
-    BookID INT PRIMARY KEY IDENTITY(1,1),
-    Title NVARCHAR(200) NOT NULL,
-    Author NVARCHAR(100) NOT NULL,
-    Publisher NVARCHAR(100) NULL,
-    Category NVARCHAR(50) NULL, -- e.g., Computer Science, Literature, Engineering [cite: 137]
-    ISBN NVARCHAR(50) UNIQUE NULL,
-    Quantity INT NOT NULL, -- Number of copies available [cite: 137]
-    Price DECIMAL(10, 2) NOT NULL,
-    RackNo NVARCHAR(20) NULL, -- Physical location [cite: 137]
-    DateAdded DATE NOT NULL
-);
+    BookID INT PRIMARY KEY IDENTITY(1,1), Title NVARCHAR(200) NOT NULL, Author NVARCHAR(100) NOT NULL, Publisher NVARCHAR(100) NULL,
+    Category NVARCHAR(50) NULL, ISBN NVARCHAR(50) UNIQUE NULL, Quantity INT NOT NULL, Price DECIMAL(10, 2) NOT NULL, RackNo NVARCHAR(20) NULL, 
+    DateAdded DATE NOT NULL );
 
--- 5. Insert Sample User Data (2 Users)
+
 INSERT INTO Users (Username, Password, Role) VALUES
 ('librarian1', 'pass123', 'Librarian'),
 ('admin', 'adminpass', 'Admin');
@@ -45,4 +27,5 @@ SELECT * FROM Users;
 
 
 SELECT * FROM Books;
+
 
