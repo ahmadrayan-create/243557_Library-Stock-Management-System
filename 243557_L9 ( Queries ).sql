@@ -16,7 +16,6 @@ INSERT INTO Users (Username, Password, Role) VALUES
 ('librarian1', 'pass123', 'Librarian'),
 ('admin', 'adminpass', 'Admin');
 
--- 6. Insert Sample Book Data
 INSERT INTO Books (Title, Author, Publisher, Category, ISBN, Quantity, Price, RackNo, DateAdded) VALUES
 ('The C# Programming Guide', 'J. Smith', 'TechPress', 'Computer Science', '978-0123456789', 50, 45.99, 'A-201', '2025-10-15'),
 ('Advanced Algorithms', 'A. Doe', 'Algorithmic Inc.', 'Computer Science', '978-1112223334', 30, 75.50, 'A-205', '2025-09-01'),
@@ -27,5 +26,6 @@ SELECT * FROM Users;
 
 
 SELECT * FROM Books;
+
 
 
